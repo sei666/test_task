@@ -29,16 +29,16 @@ def to_tree(source):
 
         ref = result
         for j in range(level):
-            keyStart = string_val[:j]
+            key_start = string_val[:j]
             if j == 0:
-                keyStart = None
-            keyOffset = string_val
+                key_start = None
+            key_offset = string_val
             if j == level - 1:
                 if string_key in ref:
-                    ref[string_key].update({keyOffset:{}})
+                    ref[string_key].update({key_offset:{}})
                 else:
-                    ref[string_key] = {keyOffset:{}}
-            ref = ref[keyStart]
+                    ref[string_key] = {key_offset:{}}
+            ref = ref[key_start]
     result = result[None]
     return result
 
